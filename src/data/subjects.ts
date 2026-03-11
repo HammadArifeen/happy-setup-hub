@@ -110,10 +110,10 @@ export const subjects: Subject[] = [
         description: "Combined Physics revision notes & questions",
       },
       {
-        name: "PMT - AQA Combined Science",
-        url: "https://www.physicsandmathstutor.com/science-revision/gcse-aqa-combined-science/",
+        name: "PMT - AQA Combined Science Past Papers",
+        url: "https://www.physicsandmathstutor.com/past-papers/gcse-science/",
         icon: "https://www.google.com/s2/favicons?domain=physicsandmathstutor.com&sz=64",
-        description: "Combined Science revision notes & past papers",
+        description: "Combined Science past papers for AQA",
       },
       {
         name: "Cognito (YouTube)",
