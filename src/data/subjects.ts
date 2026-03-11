@@ -340,7 +340,7 @@ export const subjects: Subject[] = [
     id: "english-lit",
     name: "English Literature",
     examBoard: "AQA",
-    specUrl: "https://www.aqa.org.uk/subjects/english/gcse/english-literature-8702",
+    specUrl: "https://www.aqa.org.uk/subjects/english/gcse/english-8702/specification",
     colorClass: "text-subject-english",
     glowClass: "glow-pink",
     bgGradient: "from-subject-english/20 to-subject-english/5",
