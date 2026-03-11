@@ -78,7 +78,6 @@ const EmojiPhysics = () => {
           body.y += body.vy;
           body.rotation += body.rotationSpeed * (Math.abs(body.vx) + Math.abs(body.vy)) * 0.05;
 
-          // Bounce off walls
           if (body.x < body.size / 2) {
             body.x = body.size / 2;
             body.vx *= -BOUNCE;
@@ -99,7 +98,6 @@ const EmojiPhysics = () => {
           }
         }
 
-        // Simple collision between emojis
         for (let j = i + 1; j < bodiesRef.current.length; j++) {
           const other = bodiesRef.current[j];
           const dx = other.x - body.x;
@@ -130,7 +128,6 @@ const EmojiPhysics = () => {
           }
         }
 
-        // Draw
         ctx.save();
         ctx.translate(body.x, body.y);
         ctx.rotate(body.rotation);
@@ -147,12 +144,7 @@ const EmojiPhysics = () => {
 
     animFrameRef.current = requestAnimationFrame(animate);
 
-    // Mouse/touch handlers
-    const getPos = (e: MouseEvent | Touch) => {
-      const rect = canvas.getBoundingClientRect();
-      return { x: e.clientX - rect.left, y: e.clientY - rect.top };
-    };
-
+    // Use document-level events so interactions work even though canvas is pointer-events-none
     const findBody = (x: number, y: number) => {
       for (let i = bodiesRef.current.length - 1; i >= 0; i--) {
         const body = bodiesRef.current[i];
@@ -165,9 +157,11 @@ const EmojiPhysics = () => {
       return -1;
     };
 
-    const onDown = (x: number, y: number) => {
+    const onDown = (x: number, y: number, e: Event) => {
       const idx = findBody(x, y);
       if (idx >= 0) {
+        e.preventDefault();
+        e.stopPropagation();
         dragRef.current = {
           index: idx,
           offsetX: x - bodiesRef.current[idx].x,
@@ -201,53 +195,56 @@ const EmojiPhysics = () => {
       }
     };
 
-    const mouseDown = (e: MouseEvent) => { const p = getPos(e); onDown(p.x, p.y); };
-    const mouseMove = (e: MouseEvent) => { const p = getPos(e); onMove(p.x, p.y); };
+    const mouseDown = (e: MouseEvent) => {
+      onDown(e.clientX, e.clientY, e);
+    };
+    const mouseMove = (e: MouseEvent) => {
+      onMove(e.clientX, e.clientY);
+    };
     const mouseUp = () => onUp();
 
     const touchStart = (e: TouchEvent) => {
       if (e.touches.length > 0) {
-        const p = getPos(e.touches[0]);
-        const idx = findBody(p.x, p.y);
+        const touch = e.touches[0];
+        const idx = findBody(touch.clientX, touch.clientY);
         if (idx >= 0) {
-          e.preventDefault();
-          onDown(p.x, p.y);
+          onDown(touch.clientX, touch.clientY, e);
         }
       }
     };
     const touchMove = (e: TouchEvent) => {
       if (dragRef.current && e.touches.length > 0) {
         e.preventDefault();
-        const p = getPos(e.touches[0]);
-        onMove(p.x, p.y);
+        const touch = e.touches[0];
+        onMove(touch.clientX, touch.clientY);
       }
     };
     const touchEnd = () => onUp();
 
-    canvas.addEventListener("mousedown", mouseDown);
-    window.addEventListener("mousemove", mouseMove);
-    window.addEventListener("mouseup", mouseUp);
-    canvas.addEventListener("touchstart", touchStart, { passive: false });
-    canvas.addEventListener("touchmove", touchMove, { passive: false });
-    canvas.addEventListener("touchend", touchEnd);
+    // Use capture phase so we can intercept clicks on emojis before they reach other elements
+    document.addEventListener("mousedown", mouseDown, true);
+    document.addEventListener("mousemove", mouseMove, true);
+    document.addEventListener("mouseup", mouseUp, true);
+    document.addEventListener("touchstart", touchStart, { capture: true, passive: false });
+    document.addEventListener("touchmove", touchMove, { capture: true, passive: false });
+    document.addEventListener("touchend", touchEnd, true);
 
     return () => {
       cancelAnimationFrame(animFrameRef.current);
       window.removeEventListener("resize", resize);
-      canvas.removeEventListener("mousedown", mouseDown);
-      window.removeEventListener("mousemove", mouseMove);
-      window.removeEventListener("mouseup", mouseUp);
-      canvas.removeEventListener("touchstart", touchStart);
-      canvas.removeEventListener("touchmove", touchMove);
-      canvas.removeEventListener("touchend", touchEnd);
+      document.removeEventListener("mousedown", mouseDown, true);
+      document.removeEventListener("mousemove", mouseMove, true);
+      document.removeEventListener("mouseup", mouseUp, true);
+      document.removeEventListener("touchstart", touchStart, true);
+      document.removeEventListener("touchmove", touchMove, true);
+      document.removeEventListener("touchend", touchEnd, true);
     };
   }, [initBodies]);
 
   return (
     <canvas
       ref={canvasRef}
-      className="pointer-events-auto fixed inset-0 z-10"
-      style={{ cursor: "grab" }}
+      className="pointer-events-none fixed inset-0 z-10"
     />
   );
 };
