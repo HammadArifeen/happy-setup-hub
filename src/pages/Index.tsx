@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Zap, Gamepad2, Target } from "lucide-react";
-import schoolLogo from "@/assets/school-logo.jpeg";
+import resourceHubLogo from "@/assets/resource-hub-logo.png";
 import { subjects } from "@/data/subjects";
 import SubjectSection from "@/components/SubjectSection";
 
@@ -33,9 +33,9 @@ const Index = () => {
         >
           <div className="mb-4 flex items-center justify-center gap-3">
             <motion.img
-              src={schoolLogo}
-              alt="School logo"
-              className="h-14 w-14 rounded-xl object-cover shadow-lg"
+              src={resourceHubLogo}
+              alt="Moseley Resource Hub logo"
+              className="h-16 w-16 rounded-xl object-contain shadow-lg"
               whileHover={{ scale: 1.15, rotate: 5, boxShadow: "0 0 25px hsl(262, 83%, 58%, 0.5)" }}
               whileTap={{ scale: 0.95 }}
               transition={{ type: "spring", stiffness: 300 }}
