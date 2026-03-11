@@ -56,7 +56,7 @@ export const subjects: Subject[] = [
       },
       {
         name: "PMT - Edexcel Maths",
-        url: "https://www.physicsandmathstutor.com/maths-revision/gcse-edexcel/",
+        url: "https://www.physicsandmathstutor.com/maths-revision/",
         icon: "https://www.google.com/s2/favicons?domain=physicsandmathstutor.com&sz=64",
         description: "Revision notes, worksheets & past papers",
       },
@@ -110,10 +110,10 @@ export const subjects: Subject[] = [
         description: "Combined Physics revision notes & questions",
       },
       {
-        name: "PMT - AQA Combined Science",
-        url: "https://www.physicsandmathstutor.com/science-revision/gcse-aqa-combined-science/",
+        name: "PMT - AQA Combined Science Past Papers",
+        url: "https://www.physicsandmathstutor.com/past-papers/gcse-science/",
         icon: "https://www.google.com/s2/favicons?domain=physicsandmathstutor.com&sz=64",
-        description: "Combined Science revision notes & past papers",
+        description: "Combined Science past papers for AQA",
       },
       {
         name: "Cognito (YouTube)",
@@ -306,10 +306,10 @@ export const subjects: Subject[] = [
         description: "Revision notes & exam practice",
       },
       {
-        name: "PMT - AQA English Language",
-        url: "https://www.physicsandmathstutor.com/english-language/gcse-aqa/",
+        name: "PMT - AQA English",
+        url: "https://www.physicsandmathstutor.com/english-revision/gcse-aqa/",
         icon: "https://www.google.com/s2/favicons?domain=physicsandmathstutor.com&sz=64",
-        description: "Past papers & revision resources",
+        description: "Past papers, notes & revision resources",
       },
       {
         name: "Mr Everything English (YouTube)",
@@ -340,7 +340,7 @@ export const subjects: Subject[] = [
     id: "english-lit",
     name: "English Literature",
     examBoard: "AQA",
-    specUrl: "https://www.aqa.org.uk/subjects/english/gcse/english-literature-8702",
+    specUrl: "https://www.aqa.org.uk/subjects/english/gcse/english-8702/specification",
     colorClass: "text-subject-english",
     glowClass: "glow-pink",
     bgGradient: "from-subject-english/20 to-subject-english/5",
@@ -359,10 +359,10 @@ export const subjects: Subject[] = [
         description: "Text guides, quotes & model answers",
       },
       {
-        name: "PMT - AQA English Literature",
-        url: "https://www.physicsandmathstutor.com/english-literature/gcse-aqa/",
+        name: "PMT - AQA English",
+        url: "https://www.physicsandmathstutor.com/english-revision/gcse-aqa/",
         icon: "https://www.google.com/s2/favicons?domain=physicsandmathstutor.com&sz=64",
-        description: "Revision notes & past papers",
+        description: "Revision notes, past papers & essay guides",
       },
       {
         name: "Mr Bruff (YouTube)",
