@@ -15,6 +15,7 @@ export interface Subject {
   name: string;
   examBoard: string;
   specUrl: string;
+  specUrls?: { label: string; url: string }[];
   colorClass: string;
   glowClass: string;
   bgGradient: string;
