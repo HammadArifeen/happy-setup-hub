@@ -56,7 +56,7 @@ export const subjects: Subject[] = [
       },
       {
         name: "PMT - Edexcel Maths",
-        url: "https://www.physicsandmathstutor.com/maths-revision/gcse-level-edexcel/",
+        url: "https://www.physicsandmathstutor.com/maths-revision/",
         icon: "https://www.google.com/s2/favicons?domain=physicsandmathstutor.com&sz=64",
         description: "Revision notes, worksheets & past papers",
       },
