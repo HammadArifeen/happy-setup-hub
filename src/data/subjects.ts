@@ -306,10 +306,10 @@ export const subjects: Subject[] = [
         description: "Revision notes & exam practice",
       },
       {
-        name: "PMT - AQA English Language",
-        url: "https://www.physicsandmathstutor.com/english-language/gcse-aqa/",
+        name: "PMT - AQA English",
+        url: "https://www.physicsandmathstutor.com/english-revision/gcse-aqa/",
         icon: "https://www.google.com/s2/favicons?domain=physicsandmathstutor.com&sz=64",
-        description: "Past papers & revision resources",
+        description: "Past papers, notes & revision resources",
       },
       {
         name: "Mr Everything English (YouTube)",
