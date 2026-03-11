@@ -148,7 +148,12 @@ export const subjects: Subject[] = [
     id: "triple-science",
     name: "Triple Science (Separate)",
     examBoard: "AQA",
-    specUrl: "https://www.aqa.org.uk/subjects/science/gcse",
+    specUrl: "https://www.aqa.org.uk/subjects/biology/gcse/biology-8461/specification/specification-at-a-glance",
+    specUrls: [
+      { label: "Biology Spec", url: "https://www.aqa.org.uk/subjects/biology/gcse/biology-8461/specification/specification-at-a-glance" },
+      { label: "Chemistry Spec", url: "https://www.aqa.org.uk/subjects/chemistry/gcse/chemistry-8462/specification/specification-at-a-glance" },
+      { label: "Physics Spec", url: "https://www.aqa.org.uk/subjects/physics/gcse/physics-8463/specification/specification-at-a-glance" },
+    ],
     colorClass: "text-subject-science",
     glowClass: "glow-green",
     bgGradient: "from-subject-science/20 to-subject-science/5",
