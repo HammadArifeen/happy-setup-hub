@@ -359,10 +359,10 @@ export const subjects: Subject[] = [
         description: "Text guides, quotes & model answers",
       },
       {
-        name: "PMT - AQA English Literature",
-        url: "https://www.physicsandmathstutor.com/english-literature/gcse-aqa/",
+        name: "PMT - AQA English",
+        url: "https://www.physicsandmathstutor.com/english-revision/gcse-aqa/",
         icon: "https://www.google.com/s2/favicons?domain=physicsandmathstutor.com&sz=64",
-        description: "Revision notes & past papers",
+        description: "Revision notes, past papers & essay guides",
       },
       {
         name: "Mr Bruff (YouTube)",
