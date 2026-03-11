@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import { motion } from "framer-motion";
 import { ExternalLink } from "lucide-react";
 import type { Resource } from "@/data/subjects";
@@ -9,8 +10,21 @@ interface ResourceCardProps {
 }
 
 const ResourceCard = ({ resource, index, accentColor }: ResourceCardProps) => {
+  const cardRef = useRef<HTMLAnchorElement>(null);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    const card = cardRef.current;
+    if (!card) return;
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    card.style.setProperty("--mouse-x", `${x}px`);
+    card.style.setProperty("--mouse-y", `${y}px`);
+  };
+
   return (
     <motion.a
+      ref={cardRef}
       href={resource.url}
       target="_blank"
       rel="noopener noreferrer"
@@ -19,7 +33,8 @@ const ResourceCard = ({ resource, index, accentColor }: ResourceCardProps) => {
       transition={{ delay: index * 0.07, duration: 0.4 }}
       whileHover={{ scale: 1.04, y: -4 }}
       whileTap={{ scale: 0.97 }}
-      className="group relative flex items-start gap-3 rounded-xl border border-border bg-card p-4 transition-colors hover:border-muted-foreground/30"
+      onMouseMove={handleMouseMove}
+      className="card-spotlight group relative flex items-start gap-3 rounded-xl border border-border bg-card p-4 transition-colors hover:border-muted-foreground/30"
     >
       <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-muted">
         <img
