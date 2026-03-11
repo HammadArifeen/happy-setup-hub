@@ -104,15 +104,32 @@ const SubjectSection = ({ subject, index }: SubjectSectionProps) => {
                   <BookOpen className="h-4 w-4 text-muted-foreground" />
                   <h3 className="text-sm font-semibold text-foreground">Resources</h3>
                 </div>
-                <a
-                  href={subject.specUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 rounded-full border border-border bg-muted px-2.5 py-1 text-[11px] font-semibold text-muted-foreground transition-colors hover:bg-primary hover:text-primary-foreground"
-                >
-                  <FileText className="h-3 w-3" />
-                  Spec
-                </a>
+                {subject.specUrls && subject.specUrls.length > 0 ? (
+                  <div className="flex flex-wrap gap-1.5">
+                    {subject.specUrls.map((spec) => (
+                      <a
+                        key={spec.label}
+                        href={spec.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1 rounded-full border border-border bg-muted px-2.5 py-1 text-[11px] font-semibold text-muted-foreground transition-colors hover:bg-primary hover:text-primary-foreground"
+                      >
+                        <FileText className="h-3 w-3" />
+                        {spec.label}
+                      </a>
+                    ))}
+                  </div>
+                ) : (
+                  <a
+                    href={subject.specUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 rounded-full border border-border bg-muted px-2.5 py-1 text-[11px] font-semibold text-muted-foreground transition-colors hover:bg-primary hover:text-primary-foreground"
+                  >
+                    <FileText className="h-3 w-3" />
+                    Spec
+                  </a>
+                )}
               </div>
               <div className="grid gap-3 sm:grid-cols-2">
                 {subject.resources.map((resource, i) => (
