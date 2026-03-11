@@ -74,7 +74,9 @@ export const subjects: Subject[] = [
       },
     ],
     tips: [
-      "Practice past papers under timed conditions",
+      "⚡ Exam questions are KING — do as many past papers as possible. Aim for at least one paper per week",
+      "Try to go through ALL available past papers before the real exam",
+      "Practice past papers under timed conditions to build exam stamina",
       "Focus on topics you score lowest on first",
       "Use Mathsgenie for grade-targeted practice",
     ],
@@ -139,6 +141,7 @@ export const subjects: Subject[] = [
       },
     ],
     tips: [
+      "⚡ Past papers are essential — aim to do one paper per week and work through ALL past papers before the exam",
       "Learn required practicals inside out",
       "Use specification checklists to track progress",
       "Watch Cognito videos for quick topic overviews",
@@ -226,10 +229,64 @@ export const subjects: Subject[] = [
       },
     ],
     tips: [
+      "⚡ Past papers are essential — aim to do one paper per week per science and work through ALL papers before exams",
       "Triple has extra content beyond Combined — know the differences",
       "Learn required practicals inside out",
       "Use specification checklists to track progress per science",
       "Watch Cognito videos for quick topic overviews",
+    ],
+  },
+  {
+    id: "computer-science",
+    name: "Computer Science",
+    examBoard: "OCR",
+    specUrl: "https://www.ocr.org.uk/Images/558027-specification-gcse-computer-science-j277.pdf",
+    colorClass: "text-neon-blue",
+    glowClass: "glow-purple",
+    bgGradient: "from-neon-blue/20 to-neon-blue/5",
+    icon: "💻",
+    topics: [
+      { name: "Computer Systems" },
+      { name: "Computational Thinking" },
+      { name: "Programming (Python)" },
+    ],
+    resources: [
+      {
+        name: "CSnewbs - OCR GCSE",
+        url: "https://www.csnewbs.com/ocr-gcse",
+        icon: "https://www.google.com/s2/favicons?domain=csnewbs.com&sz=64",
+        description: "Complete OCR GCSE CS revision — notes, quizzes & tasks",
+      },
+      {
+        name: "CSnewbs (YouTube)",
+        url: "https://www.youtube.com/@csnewbs",
+        icon: "https://www.google.com/s2/favicons?domain=youtube.com&sz=64",
+        description: "OCR Computer Science video tutorials",
+      },
+      {
+        name: "Craig'n'Dave (YouTube)",
+        url: "https://www.youtube.com/@craigndave",
+        icon: "https://www.google.com/s2/favicons?domain=youtube.com&sz=64",
+        description: "In-depth OCR CS topic explanations",
+      },
+      {
+        name: "BBC Bitesize - Computer Science",
+        url: "https://www.bbc.co.uk/bitesize/subjects/z34k7ty",
+        icon: "https://www.google.com/s2/favicons?domain=bbc.co.uk&sz=64",
+        description: "OCR Computer Science guides & quizzes",
+      },
+      {
+        name: "Seneca Learning - Computer Science",
+        url: "https://senecalearning.com/en-GB/",
+        icon: "https://www.google.com/s2/favicons?domain=senecalearning.com&sz=64",
+        description: "Smart revision with OCR CS content",
+      },
+    ],
+    tips: [
+      "Practice programming questions in Python regularly",
+      "Learn binary, hex & logic gates until they're second nature",
+      "Use CSnewbs to cover every topic in the OCR spec",
+      "Practise pseudo-code and trace tables",
     ],
   },
   {
@@ -259,6 +316,12 @@ export const subjects: Subject[] = [
         url: "https://www.youtube.com/@MrEverythingEnglish",
         icon: "https://www.google.com/s2/favicons?domain=youtube.com&sz=64",
         description: "AQA English walkthroughs & tips",
+      },
+      {
+        name: "Give Your Grades a Glow Up (YouTube)",
+        url: "https://www.youtube.com/@glowupyourgrades/videos",
+        icon: "https://www.google.com/s2/favicons?domain=youtube.com&sz=64",
+        description: "English Language exam tips & creative writing help",
       },
       {
         name: "BBC Bitesize - English Language",
@@ -308,6 +371,12 @@ export const subjects: Subject[] = [
         description: "Literature analysis & essay tips",
       },
       {
+        name: "Give Your Grades a Glow Up (YouTube)",
+        url: "https://www.youtube.com/@glowupyourgrades/videos",
+        icon: "https://www.google.com/s2/favicons?domain=youtube.com&sz=64",
+        description: "Excellent poetry analysis & literature revision",
+      },
+      {
         name: "Sparknotes",
         url: "https://www.sparknotes.com/",
         icon: "https://www.google.com/s2/favicons?domain=sparknotes.com&sz=64",
@@ -318,6 +387,7 @@ export const subjects: Subject[] = [
       "Memorise 10-15 key quotes per text",
       "Practise writing analytical paragraphs (PEAL)",
       "Watch Mr Bruff for essay structure tips",
+      "Check out Give Your Grades a Glow Up for brilliant poetry analysis",
     ],
   },
   {
