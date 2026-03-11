@@ -83,7 +83,7 @@ export const subjects: Subject[] = [
     id: "combined-science",
     name: "Combined Science (Trilogy)",
     examBoard: "AQA",
-    specUrl: "https://www.aqa.org.uk/subjects/science/gcse/combined-science-trilogy-8464",
+    specUrl: "https://files.revisely.com/documents/gcse/specifications/aqa-science-sp.pdf",
     colorClass: "text-subject-science",
     glowClass: "glow-green",
     bgGradient: "from-subject-science/20 to-subject-science/5",
