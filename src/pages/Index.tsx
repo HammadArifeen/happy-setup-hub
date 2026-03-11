@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Zap, Gamepad2, Target } from "lucide-react";
 import resourceHubLogo from "@/assets/resource-hub-logo.png";
+import moseleySchoolLogo from "@/assets/moseley-school-logo.png";
 import { subjects } from "@/data/subjects";
 import SubjectSection from "@/components/SubjectSection";
 
@@ -31,12 +32,12 @@ const Index = () => {
           transition={{ duration: 0.7, ease: "easeOut" }}
           className="mb-12 text-center"
         >
-          <div className="mb-4 flex items-center justify-center gap-3">
+          <div className="mb-6 flex items-center justify-center gap-4">
             <motion.img
               src={resourceHubLogo}
               alt="Moseley Resource Hub logo"
-              className="h-16 w-16 rounded-xl object-contain shadow-lg"
-              whileHover={{ scale: 1.15, rotate: 5, boxShadow: "0 0 25px hsl(262, 83%, 58%, 0.5)" }}
+              className="h-24 w-24 rounded-2xl object-contain shadow-lg sm:h-28 sm:w-28"
+              whileHover={{ scale: 1.1, rotate: 3, boxShadow: "0 0 30px hsl(262, 83%, 58%, 0.5)" }}
               whileTap={{ scale: 0.95 }}
               transition={{ type: "spring", stiffness: 300 }}
             />
@@ -89,9 +90,18 @@ const Index = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1 }}
-          className="mt-16 pb-8 text-center text-xs text-muted-foreground"
+          className="mt-16 pb-8 text-center"
         >
-          <p>Good luck with your GCSEs! 🚀 You've got this.</p>
+          <div className="flex flex-col items-center gap-4">
+            <img
+              src={moseleySchoolLogo}
+              alt="Moseley School and Sixth Form"
+              className="h-16 rounded-lg object-contain sm:h-20"
+            />
+            <p className="text-xs text-muted-foreground">
+              Good luck with your GCSEs! 🚀 You've got this.
+            </p>
+          </div>
         </motion.footer>
       </div>
     </div>
