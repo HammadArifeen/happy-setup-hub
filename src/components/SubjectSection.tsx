@@ -13,6 +13,7 @@ const accentMap: Record<string, string> = {
   maths: "hsl(262, 83%, 58%)",
   "combined-science": "hsl(142, 76%, 50%)",
   "triple-science": "hsl(142, 76%, 50%)",
+  "computer-science": "hsl(210, 100%, 60%)",
   "english-lang": "hsl(340, 82%, 55%)",
   "english-lit": "hsl(340, 82%, 55%)",
   history: "hsl(28, 95%, 55%)",

@@ -4,10 +4,18 @@ import resourceHubLogo from "@/assets/resource-hub-logo.png";
 import moseleySchoolLogo from "@/assets/moseley-school-logo.png";
 import { subjects } from "@/data/subjects";
 import SubjectSection from "@/components/SubjectSection";
+import EmojiPhysics from "@/components/EmojiPhysics";
+import MouseGlow from "@/components/MouseGlow";
 
 const Index = () => {
   return (
     <div className="relative min-h-screen bg-background grid-bg">
+      {/* Interactive background grid glow */}
+      <MouseGlow />
+
+      {/* Emoji physics minigame */}
+      <EmojiPhysics />
+
       {/* Floating orbs */}
       <div className="pointer-events-none fixed inset-0 overflow-hidden">
         <div
@@ -24,7 +32,7 @@ const Index = () => {
         />
       </div>
 
-      <div className="relative mx-auto max-w-4xl px-4 py-10 sm:px-6 lg:px-8">
+      <div className="relative z-20 mx-auto max-w-4xl px-4 py-10 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.header
           initial={{ opacity: 0, y: -30 }}
@@ -61,6 +69,9 @@ const Index = () => {
           </h1>
           <p className="mt-3 text-sm text-muted-foreground">
             Your ultimate GCSE revision arsenal — all the best resources in one place
+          </p>
+          <p className="mt-1 text-xs text-muted-foreground/60">
+            💡 Drag the emojis around! They have physics!
           </p>
 
           <motion.div
